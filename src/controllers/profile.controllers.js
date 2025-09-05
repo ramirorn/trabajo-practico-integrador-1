@@ -2,11 +2,11 @@ import { ProfileModel } from "../models/profile.model.js";
 
 // Creacion de un perfil
 export const createNewProfile = async (req, res) => {
-  const { firstname, lastname, biography, avatar_url, birthday } = req.body;
+  const { first_name, last_name, biography, avatar_url, birthday } = req.body;
   try {
     const profile = await ProfileModel.create(
-      firstname,
-      lastname,
+      first_name,
+      last_name,
       biography,
       avatar_url,
       birthday

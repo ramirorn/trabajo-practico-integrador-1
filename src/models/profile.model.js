@@ -7,10 +7,10 @@ export const ProfileModel = sequelize.define("Profile", {
     primaryKey: true,
     autoIncrement: true,
   },
-  firstName: {
+  first_name: {
     type: DataTypes.STRING(50),
   },
-  lastName: {
+  last_name: {
     type: DataTypes.STRING(50),
   },
   biography: {
@@ -19,7 +19,7 @@ export const ProfileModel = sequelize.define("Profile", {
   avatar_url: {
     type: DataTypes.STRING(255),
   },
-  birthday: {
+  birth_date: {
     type: DataTypes.DATE,
   },
 });
