@@ -1,6 +1,6 @@
 import { ArticleTagModel } from "../models/articleTag.model.js";
 
-// Creacion de una nueva relacion entre articulo tag y model
+// Creacion de una nueva relacion entre articulo tag y article
 export const createNewArticleTag = async (req, res) => {
   try {
     const articleTag = await ArticleTagModel.create(req.body);
