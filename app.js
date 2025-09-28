@@ -8,6 +8,7 @@ import profileRouter from "./src/routes/profile.routes.js";
 import articleTagRouter from "./src/routes/articleTag.routes.js";
 import articleRouter from "./src/routes/article.routes.js";
 import cookieParser from "cookie-parser";
+import { authRouter } from "./src/routes/auth.routes.js";
 
 // Constantes
 const app = express();
@@ -23,7 +24,7 @@ app.use("/api", tagRouter);
 app.use("/api", profileRouter);
 app.use("/api", articleTagRouter);
 app.use("/api", articleRouter);
-
+app.use("/api", authRouter);
 // Conexion a la base de datos
 app.listen(PORT, async () => {
   await startDB();
