@@ -27,8 +27,10 @@ export const ArticleModel = sequelize.define("Article", {
 
 ArticleModel.belongsTo(UserModel, {
   foreignKey: "user_id",
+  as: "author"
 });
 
 UserModel.hasMany(ArticleModel, {
   foreignKey: "user_id",
+  as: "articles",
 });

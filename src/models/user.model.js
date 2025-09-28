@@ -23,4 +23,7 @@ export const UserModel = sequelize.define("User", {
     type: DataTypes.ENUM("user", "admin"),
     defaultValue: "user",
   },
+},
+{
+  paranoid: true, // Hace un soft delete
 });

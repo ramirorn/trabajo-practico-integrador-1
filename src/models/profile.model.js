@@ -28,8 +28,10 @@ export const ProfileModel = sequelize.define("Profile", {
 // Relacion uno a uno
 ProfileModel.belongsTo(UserModel, {
   foreignKey: "user_id",
+  as: "user"
 });
 
 UserModel.hasOne(ProfileModel, {
   foreignKey: "user_id",
+  as: "profile"
 });

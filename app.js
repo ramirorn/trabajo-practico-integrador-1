@@ -7,12 +7,17 @@ import tagRouter from "./src/routes/tag.routes.js";
 import profileRouter from "./src/routes/profile.routes.js";
 import articleTagRouter from "./src/routes/articleTag.routes.js";
 import articleRouter from "./src/routes/article.routes.js";
+import cookieParser from "cookie-parser";
 
 // Constantes
 const app = express();
 const PORT = process.env.PORT;
 
+// Middlewares
 app.use(express.json());
+app.use(cookieParser());
+
+// Routes
 app.use("/api", userRouter);
 app.use("/api", tagRouter);
 app.use("/api", profileRouter);
