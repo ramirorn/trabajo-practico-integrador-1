@@ -1,5 +1,6 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../config/database.js";
+import { UserModel } from "./user.model.js";
 
 export const ProfileModel = sequelize.define("Profile", {
   id: {
@@ -22,4 +23,13 @@ export const ProfileModel = sequelize.define("Profile", {
   birth_date: {
     type: DataTypes.DATE,
   },
+});
+
+// Relacion uno a uno
+ProfileModel.belongsTo(UserModel, {
+  foreignKey: "user_id",
+});
+
+UserModel.hasOne(ProfileModel, {
+  foreignKey: "user_id",
 });

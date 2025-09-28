@@ -40,6 +40,7 @@ export const createNewProfileValidations = [
     .notEmpty()
     .withMessage("Birth_date no debe estar vacio"),
   body("user_id")
+    .optional()
     .notEmpty()
     .withMessage("El user_id debe ser incluido")
     .isInt()

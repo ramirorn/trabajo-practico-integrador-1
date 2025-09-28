@@ -33,6 +33,7 @@ export const createNewArticleValidations = [
       "Status solo debe estar entre los valores 'published' o 'archived'"
     ),
   body("user_id")
+    .optional()
     .notEmpty()
     .withMessage("El user_id debe ser incluido")
     .isInt()
