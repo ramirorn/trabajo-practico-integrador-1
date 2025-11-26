@@ -16,7 +16,7 @@ const articleTagRouter = Router();
 articleTagRouter.post("/articles-tags", createNewArticleTag);
 articleTagRouter.get("/articles-tags", getAllArticleTag);
 articleTagRouter.get("/articles-tags/:id", getArticleTagById);
-articleTagRouter.put("/articles-tags/:id", authMiddleware, ownerOrAdminMiddleware, updateArticleTagValidations, updateArticleTag);
-articleTagRouter.delete("/articles-tags/:id", authMiddleware, ownerOrAdminMiddleware, deleteArticleTagByIdValidations, deleteArticleTag);
+articleTagRouter.put("/articles-tags/:id", authMiddleware, ownerOrAdminMiddleware, updateArticleTagValidations, applyValidations, updateArticleTag);
+articleTagRouter.delete("/articles-tags/:id", authMiddleware, ownerOrAdminMiddleware, deleteArticleTagByIdValidations, applyValidations, deleteArticleTag);
 
 export default articleTagRouter;
