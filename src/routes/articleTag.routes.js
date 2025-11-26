@@ -5,7 +5,7 @@ import {
   getArticleTagById,
   updateArticleTag,
   deleteArticleTag,
-} from "../controllers/articleTag.controller.js";
+} from "../controllers/articleTag.controllers.js";
 
 const articleTagRouter = Router();
 
