@@ -153,14 +153,6 @@ El servidor debería estar corriendo en `http://localhost:3000`.
 - `PUT /api/users/:id`: Actualizar un usuario por ID
 - `DELETE /api/users/:id`: Eliminar un usuario por ID
 
-### Blogs
-
-- `GET /api/blogs`: Obtener todos los blogs
-- `GET /api/blogs/:id`: Obtener un blog por ID
-- `POST /api/blogs`: Crear un nuevo blog
-- `PUT /api/blogs/:id`: Actualizar un blog por ID
-- `DELETE /api/blogs/:id`: Eliminar un blog por ID
-
 ### Tags
 
 - `GET /api/tags`: Obtener todas las etiquetas
