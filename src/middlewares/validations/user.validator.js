@@ -9,9 +9,10 @@ export const createNewUserValidations = [
     .notEmpty()
     .withMessage("El nombre de usuario no puede estar vacio")
     .isLength(
-      { min: 3, max: 20 }.withMessage(
-        "El nombre de usuario debe contener entre 3 a 20 caracteres"
-      )
+      { min: 3, max: 20 }
+    )
+    .withMessage(
+      "El nombre de usuario debe contener entre 3 a 20 caracteres"
     )
     .isAlphanumeric()
     .withMessage("El nombre de usuario debe ser alfanumerico")
@@ -32,8 +33,8 @@ export const createNewUserValidations = [
     .isLength({ max: 50 })
     .withMessage("El email no debe pasar los 50 caracteres")
     .custom(async (email) => {
-      const email = await UserModel.findOne({ where: { email: email } });
-      if (email) {
+      const emailExists = await UserModel.findOne({ where: { email: email } });
+      if (emailExists) {
         throw new Error("El email ya existe");
       }
       return true;
@@ -85,9 +86,10 @@ export const updateUserValidations = [
     .notEmpty()
     .withMessage("El nombre de usuario no puede estar vacio")
     .isLength(
-      { min: 3, max: 20 }.withMessage(
-        "El nombre de usuario debe contener entre 3 a 20 caracteres"
-      )
+      { min: 3, max: 20 }
+    )
+    .withMessage(
+      "El nombre de usuario debe contener entre 3 a 20 caracteres"
     )
     .isAlphanumeric()
     .withMessage("El nombre de usuario debe ser alfanumerico")
@@ -109,8 +111,8 @@ export const updateUserValidations = [
     .isLength({ max: 50 })
     .withMessage("El email no debe pasar los 50 caracteres")
     .custom(async (email) => {
-      const email = await UserModel.findOne({ where: { email: email } });
-      if (email) {
+      const emailExists = await UserModel.findOne({ where: { email: email } });
+      if (emailExists) {
         throw new Error("El email ya existe");
       }
       return true;
