@@ -11,13 +11,13 @@ export const register = async (req,res) => {
         const data = matchedData(req);
 
         // Hasheo de contraseña
-        const hashedPassword = hashPassword(data.password);
+        const hashedPassword = await hashPassword(data.password);
 
         // Creacion del usuario con los datos validados y la password hasheada
         const user = await UserModel.create({
             username: data.username,
             email: data.email,
-            password: data.password,
+            password: hashedPassword,
             role: data.role,
         })
 
@@ -71,7 +71,7 @@ export const login = async (req,res) => {
 export const logout = async (req,res) => {
     try {
         // Eliminar el token de las cookies
-        res.clearCookie("toke")
+        res.clearCookie("token")
 
         // Respuesta
         res.status(200).json({
